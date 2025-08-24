@@ -52,8 +52,11 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* --------- LOGO --------- */}
-          <Link to="/" className="text-xl font-bold text-white dark:text-white transition-colors duration-500">
-            Nonnzy App
+          <Link
+            to="/"
+            className="text-xl font-bold text-white dark:text-white transition-colors duration-500"
+          >
+            BrainMind{" "}
           </Link>
 
           {/* --------- LIENS VERSION DESKTOP --------- */}
@@ -76,9 +79,9 @@ export default function Navbar() {
               className={buttonStyle + " ml-6"}
             >
               {dark ? (
-                <Sun className="text-yellow-400" /> 
+                <Sun className="text-yellow-400" />
               ) : (
-                <Moon className="text-white" /> 
+                <Moon className="text-white" />
               )}
             </Button>
           </div>
@@ -91,7 +94,7 @@ export default function Navbar() {
               onClick={() => setOpen(!open)}
               className={buttonStyle}
             >
-              <Menu className="text-white" /> 
+              <Menu className="text-white" />
             </Button>
           </div>
         </div>
@@ -104,13 +107,25 @@ export default function Navbar() {
                     bg-gray-500/30 dark:bg-black/30 backdrop-blur-2xl`}
       >
         <div className="flex flex-col h-full justify-center items-center space-y-10 text-2xl font-semibold px-6 relative">
-          <Link to="/blog" onClick={() => setOpen(false)} className={linkStyleMobile}>
+          <Link
+            to="/blog"
+            onClick={() => setOpen(false)}
+            className={linkStyleMobile}
+          >
             <Book size={28} /> Blog
           </Link>
-          <Link to="/about" onClick={() => setOpen(false)} className={linkStyleMobile}>
+          <Link
+            to="/about"
+            onClick={() => setOpen(false)}
+            className={linkStyleMobile}
+          >
             <Info size={28} /> À propos
           </Link>
-          <Link to="/brindmind" onClick={() => setOpen(false)} className={linkStyleMobile}>
+          <Link
+            to="/brindmind"
+            onClick={() => setOpen(false)}
+            className={linkStyleMobile}
+          >
             <Brain size={28} /> Brind Mind
           </Link>
 
@@ -136,7 +151,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className={buttonStyle + " p-4"}
             >
-              <X className="text-white" size={22} /> 
+              <X className="text-white" size={22} />
             </Button>
           </div>
         </div>
