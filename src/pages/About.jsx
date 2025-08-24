@@ -31,7 +31,7 @@ export default function About() {
       {/* Contenu */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 text-center pt-20">
         <h1 className="text-6xl lg:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600 drop-shadow-lg">
-          transformium          <br />
+          Transformium          <br />
           <span className="text-gray-400">Nonnzy</span>
         </h1>
 
@@ -69,7 +69,7 @@ export default function About() {
               backSpeed={20}
               backDelay={2000}
               loop
-              className="text-[30px] font-normal bg-clip-text text-transparent bg-gradient-to-r from-black-700 to-green-700 drop-shadow-md leading-relaxed text-center"
+              className="text-[30px] font-normal bg-clip-text text-transparent bg-gradient-to-r from-black-200 to-green-00 drop-shadow-md leading-relaxed text-center"
             />
           </div>
         </div>
