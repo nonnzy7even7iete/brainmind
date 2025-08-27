@@ -4,7 +4,7 @@ import { Brain } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="fixed inset-0 bg-black overflow-hidden font-['IBM Plex Mono']">
+    <div className="relative min-h-screen bg-black overflow-hidden font-['IBM Plex Mono']">
       {/* Grille de fond */}
       <div
         className="absolute inset-0 opacity-20 z-0"
@@ -19,10 +19,8 @@ export default function About() {
 
       {/* Spotlight */}
       <div className="absolute inset-0 z-[1]">
-        <Spotlight
-          className="-top-40 left-0 md:left-60 md:-top-20"
-          fill="white"
-        />
+        <Spotlight className="h-[250%] w-[200%] md:h-[169%] md:w-[138%]" />
+
       </div>
 
       {/* Navbar space */}

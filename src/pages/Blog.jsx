@@ -1,19 +1,45 @@
+"use client";
+
 import React from "react";
 import GradientText from "@/components/ui/GradientText";
 import GlassmorphicGrid from "@/components/ui/GlassmorphicGrid";
+
+// Import des images
 import nonnzytr from "../assets/nonnzy.png";
 import awarness from "../assets/FLOWAWARNESS.png";
 import NN from "../assets/NN.png";
 
+// Import d’icônes depuis react-icons
+import { FaReact, FaLightbulb, FaRocket } from "react-icons/fa";
 
 const Blog = () => {
-  // Exemple d’images pour le grid
-const images = [
-  { src: nonnzytr, alt: "Le sens de l audace " },
-  { src: awarness, alt: "Le culte de la qualite " },
-  { src: NN, alt: "La culture de l innovation" },
-];
-
+  // ✅ Objets pour alimenter le grid
+  const items = [
+    {
+      src: nonnzytr,
+      alt: "Le sens de l'audace",
+      title: "NonnzytransformiumMentra",
+      subtitle: "Ainsi soit il ",
+      signature: "Nonnzytransformiummantra",
+      icon: <FaRocket />,
+    },
+    {
+      src: awarness,
+      alt: "Nonnzy",
+      title: "Logique metier",
+      subtitle: "Chaque détail compte",
+      signature: "Flow Awarness",
+      icon: <FaLightbulb />,
+    },
+    {
+      src: NN,
+      alt: "La culture de l'innovation",
+      title: "Innovation",
+      subtitle: "Awarness",
+      signature: "ReactNatveOnfreedomtofail ",
+      icon: <FaReact />,
+    },
+  ];
 
   return (
     <div className="px-6 sm:px-12 flex flex-col items-center justify-start min-h-screen text-center bg-black text-white">
@@ -29,12 +55,12 @@ const images = [
 
       {/* TEXTE INTRODUCTIF */}
       <p className="text-lg sm:text-xl mb-12 max-w-3xl">
-        Ici tu peux écrire ton contenu. Ce texte est normal, mais le titre au-dessus a un joli
-        gradient animé ! Tous les éléments sont centrés et responsive.
+        Découvre mes cartes illustrant mes valeurs et mes projets. La grille est totalement
+        responsive et chaque carte garde une largeur minimale de 270px.
       </p>
 
       {/* GRID GLASSMORPHIC */}
-      <GlassmorphicGrid items={images} />
+      <GlassmorphicGrid items={items} />
 
       {/* TEXTE / FUTUR COMPOSANT */}
       <section className="w-full p-16 flex flex-col items-center text-center">

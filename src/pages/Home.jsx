@@ -1,23 +1,24 @@
 "use client";
 
 import React from "react";
-import GeometricLines from "@/components/ui/homePage"; // 👈 tu appelles un composant
+import Heropages from "@/components/ui/homePage";
+import { Spotlight } from "@/components/ui/Spotlight";
 
 const Home = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black overflow-hidden">
+    <div className="relative w-full flex-1 flex flex-col overflow-hidden">
+
+      {/* Background glassmorphique */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-lg rounded-xl z-0 pointer-events-none"></div>
 
       {/* Spotlights */}
-      <div className="absolute inset-0">
-        {/* ... lumières ... */}
+      <div className="absolute inset-0 z-30">
+        <Spotlight fill="white" className="opacity-30" />
       </div>
 
-      {/* 👇 Ici tu appelles GeometricLines */}
-      <GeometricLines color="white" opacity={0.3} />
-
-      {/* Contenu */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
-        {/* ... ton texte ... */}
+      {/* Hero */}
+      <div className="relative z-20 pt-[27px]">
+        <Heropages color="white" opacity={0.3} />
       </div>
 
     </div>
