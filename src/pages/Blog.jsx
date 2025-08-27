@@ -1,38 +1,49 @@
-import { Spotlight } from "@/components/ui/Spotlight";
+import React from "react";
+import GradientText from "@/components/ui/GradientText";
+import GlassmorphicGrid from "@/components/ui/GlassmorphicGrid";
+import nonnzytr from "../assets/nonnzy.png";
+import awarness from "../assets/FLOWAWARNESS.png";
+import NN from "../assets/NN.png";
 
-export default function Blog() {
+
+const Blog = () => {
+  // Exemple d’images pour le grid
+const images = [
+  { src: nonnzytr, alt: "Le sens de l audace " },
+  { src: awarness, alt: "Le culte de la qualite " },
+  { src: NN, alt: "La culture de l innovation" },
+];
+
+
   return (
-    <div className="min-h-screen w-full bg-black relative overflow-hidden -mx-6 -mt-20">
-      {/* Grille de fond */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-        }}
-      />
-      
-      {/* Composant Spotlight */}
-      <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="white"
-      />
-      
-      {/* Votre contenu */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 text-center pt-20">
-        <h1 className="text-6xl lg:text-8xl font-bold mb-8 text-white">
-          À propos
-          <br />
-          <span className="text-gray-400">de l'App</span>
-        </h1>
-        
-        <p className="text-gray-400 text-lg lg:text-xl max-w-3xl">
-          Votre description de l'application ici...
-        </p>
-      </div>
+    <div className="px-6 sm:px-12 flex flex-col items-center justify-start min-h-screen text-center bg-black text-white">
+      {/* TITRE GRADIENT */}
+      <h1 className="mb-8">
+        <GradientText
+          text="Bienvenue sur mon blog"
+          gradient={["#888", "#222", "#444"]}
+          duration={7}
+          fontSize="3rem"
+        />
+      </h1>
+
+      {/* TEXTE INTRODUCTIF */}
+      <p className="text-lg sm:text-xl mb-12 max-w-3xl">
+        Ici tu peux écrire ton contenu. Ce texte est normal, mais le titre au-dessus a un joli
+        gradient animé ! Tous les éléments sont centrés et responsive.
+      </p>
+
+      {/* GRID GLASSMORPHIC */}
+      <GlassmorphicGrid items={images} />
+
+      {/* TEXTE / FUTUR COMPOSANT */}
+      <section className="w-full p-16 flex flex-col items-center text-center">
+        <div className="bg-gray-800/40 text-white rounded-xl p-6 text-center max-w-2xl w-full shadow-lg backdrop-blur-md">
+          Ici pourra être ton prochain composant, centré et responsive.
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default Blog;
