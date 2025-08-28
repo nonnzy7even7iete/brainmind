@@ -67,7 +67,7 @@ export default function HomePage() {
           </p>
 
           {/* Bloc icônes contact avec z-index et clic fonctionnel */}
-          <div className="flex items-center gap-4 flex-wrap mt-4 relative z-50">
+          <div className="flex items-center gap-4 flex-wrap mt-4 relative z-30">
             <div className="flex gap-4 text-2xl">
               <a
                 href="https://www.linkedin.com/in/ton-profil"

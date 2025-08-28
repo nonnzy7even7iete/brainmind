@@ -12,12 +12,12 @@ const Home = () => {
       <div className="absolute inset-0 bg-white/5 backdrop-blur-lg rounded-xl z-0 pointer-events-none"></div>
 
       {/* Spotlights */}
-      <div className="absolute inset-0 z-30">
+      <div className="absolute inset-0 z-[10]">
         <Spotlight fill="white" className="opacity-30" />
       </div>
 
       {/* Hero */}
-      <div className="relative z-40 pt-[27px]">
+      <div className="relative z-[7] pt-[27px]">
         <Heropages color="white" opacity={0.3} />
       </div>
 

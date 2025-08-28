@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,8 +13,8 @@ import { CgMenuRightAlt, CgClose } from "react-icons/cg";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false); 
-  const [dark, setDark] = useState(false); 
+  const [open, setOpen] = useState(false);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     if (dark) {
@@ -26,7 +28,7 @@ export default function Navbar() {
 
   const buttonStyle = `
     rounded-full p-2 transition-colors duration-500
-    bg-gray-400/10 dark:bg-gray-800/40  /* 🔹 soft et transparent */
+    bg-gray-700/10 dark:bg-gray-800/10
     border border-gray-300/30 dark:border-gray-600/40
     backdrop-blur-xl
     hover:bg-gray-400/20 dark:hover:bg-gray-700/50
@@ -48,7 +50,7 @@ export default function Navbar() {
     <>
       {/* NAVBAR PRINCIPALE */}
       <nav
-        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90vw] z-50
+        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90vw] z-[77]
                    bg-gray-500/30 dark:bg-gray-900/30 backdrop-blur-2xl
                    border border-gray-400/40 dark:border-gray-700/40
                    rounded-full transition-colors duration-500 shadow-lg"
@@ -59,7 +61,7 @@ export default function Navbar() {
             to="/"
             className="text-xl font-bold text-white dark:text-white transition-colors duration-500"
           >
-            BrainMind{" "}
+            BrainMind
           </Link>
 
           {/* LIENS VERSION DESKTOP */}
@@ -81,7 +83,11 @@ export default function Navbar() {
               onClick={toggleTheme}
               className={buttonStyle + " ml-6"}
             >
-              {dark ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-white" />}
+              {dark ? (
+                <FiSun className="text-yellow-400" />
+              ) : (
+                <FiMoon className="text-white" />
+              )}
             </Button>
           </div>
 
@@ -91,9 +97,9 @@ export default function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setOpen(!open)}
-              className={buttonStyle + " p-4 text-3xl"} // 🔹 bouton menu plus grand
+              className={buttonStyle + " p-4 text-3xl"}
             >
-              <CgMenuRightAlt className="text-white" />
+              <CgMenuRightAlt className= "text-white" />
             </Button>
           </div>
         </div>
@@ -101,9 +107,9 @@ export default function Navbar() {
 
       {/* MENU MOBILE */}
       <div
-        className={`fixed inset-0 z-40 transition-transform duration-500 ease-in-out
+        className={`fixed inset-0 z-[70] transition-transform duration-500 ease-in-out
                     ${open ? "translate-x-0" : "translate-x-full"}
-                    bg-gray-500/30 dark:bg-black/30 backdrop-blur-2xl`}
+                    bg-gray-700/30 dark:bg-black/30 backdrop-blur-2xl`}
       >
         <div className="flex flex-col h-full justify-center items-center space-y-10 text-2xl font-semibold px-6 relative">
           <Link
@@ -135,7 +141,11 @@ export default function Navbar() {
             onClick={toggleTheme}
             className={buttonStyle + " mt-10"}
           >
-            {dark ? <FiSun className="text-yellow-400" size={24} /> : <FiMoon className="text-white" size={24} />}
+            {dark ? (
+              <FiSun className="text-yellow-400" size={24} />
+            ) : (
+              <FiMoon className="text-white" size={24} />
+            )}
           </Button>
 
           {/* BOUTON "FERMER" MOBILE */}
