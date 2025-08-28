@@ -66,7 +66,7 @@ export default function BrainMind() {
               logic: item.logic
             }))}
             direction="left"
-            speed={7}
+            speed={17}
             pauseOnHover={true}
           />
         </div>
