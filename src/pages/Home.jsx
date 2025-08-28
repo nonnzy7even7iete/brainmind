@@ -2,7 +2,7 @@
 
 import React from "react";
 import Heropages from "@/components/ui/homePage";
-import { Spotlight } from "@/components/ui/Spotlight";
+import  Spotlight  from "@/components/ui/Spotlight";
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
       </div>
 
       {/* Hero */}
-      <div className="relative z-20 pt-[27px]">
+      <div className="relative z-40 pt-[27px]">
         <Heropages color="white" opacity={0.3} />
       </div>
 
