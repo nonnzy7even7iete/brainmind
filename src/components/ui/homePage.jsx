@@ -54,7 +54,7 @@ export default function HomePage() {
             {" "}
             <span>
               <GradientText
-                text="Hallo la terre ! je suis ,Diane Chaka Junior"
+                text="Allô ! la terre ! la terre ! je suis ,Diane Chaka Junior"
                 gradient={["#fff", "#ccc", "#fff"]}
                 duration={77}
                 fontSize="2.5rem"
