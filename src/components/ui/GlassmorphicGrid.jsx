@@ -49,12 +49,12 @@ const GlassmorphicGrid = ({ items }) => {
             />
 
             {/* TEXTES */}
-            <div className="flex flex-col flex-grow text-left">
+            <div className="flex flex-col flex-grow items-center text-center">
               <h2 className="text-2xl font-bold mb-2">{item.title}</h2>
               <h3 className="text-lg font-semibold text-gray-300 mb-2">{item.subtitle}</h3>
               <p className="text-sm italic text-gray-400 mb-2">{item.signature}</p>
 
-              {item.icon && <div className="mt-auto flex justify-start">{item.icon}</div>}
+              {item.icon && <div className="mt-auto flex justify-center">{item.icon}</div>}
             </div>
           </div>
         );

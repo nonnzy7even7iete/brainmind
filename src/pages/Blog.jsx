@@ -10,35 +10,38 @@ import awarness from "../assets/FLOWAWARNESS.png";
 import NN from "../assets/NN.png";
 
 // Import d’icônes
-import { Brain } from "lucide-react";   // <-- correction ici
-import { FaReact, FaLightbulb } from "react-icons/fa";
+import { Brain } from "lucide-react";
+import { SiNextdotjs, SiNodedotjs } from "react-icons/si";
 
 const Blog = () => {
-  // ✅ Objets pour alimenter le grid
+  // ✅ Objets pour alimenter la grille
   const items = [
     {
       src: nonnzytr,
       alt: "Le sens de l'audace",
-      title: "NonnzytransformiumMentra",
-      subtitle: "Ainsi soit il",
+      title: "Software Engineering",
+      subtitle:
+        "Là où l’algorithme guide le potentiel vers l’inattendu.",
       signature: "Nonnzytransformiummantra",
-      icon: <Brain size={32} />,   // <-- correction ici
+      icon: <Brain size={32} />,
     },
     {
       src: awarness,
       alt: "Nonnzy",
-      title: "Logique metier",
-      subtitle: "Chaque détail compte",
-      signature: "Flow Awarness",
-      icon: <FaLightbulb size={32} />,
+      title: "Logique métier",
+      subtitle:
+        "Un schéma d’action exécutif orienté vers le potentiel de croissance, adapté aux besoins de votre industrie.",
+      signature: "Flow Awareness",
+      icon: <SiNextdotjs size={32} />, // <-- Next.js
     },
     {
       src: NN,
       alt: "La culture de l'innovation",
-      title: "Innovation",
-      subtitle: "Awarness",
-      signature: "ReactNatveOnfreedomtofail",
-      icon: <FaReact size={32} />,
+      title: "Logique serveur",
+      subtitle:
+        "L’exécution de ce schéma d’action, là où chaque requête trouve sa réponse avant même qu’elle ne soit formulée.",
+      signature: "Freedom to fail",
+      icon: <SiNodedotjs size={32} />, // <-- Node.js
     },
   ];
 
@@ -55,8 +58,9 @@ const Blog = () => {
           />
         </h1>
         <p className="text-lg sm:text-xl mt-6 max-w-3xl mx-auto">
-          Découvre mes cartes illustrant mes valeurs et mes projets. La grille est totalement
-          responsive et chaque carte garde une largeur minimale de 270px.
+          Découvre mes cartes illustrant mes valeurs et mes projets. La grille
+          est totalement responsive et chaque carte garde une largeur minimale
+          de 270px.
         </p>
       </header>
 
