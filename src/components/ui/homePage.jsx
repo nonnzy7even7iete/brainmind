@@ -51,10 +51,10 @@ export default function HomePage() {
           className="space-y-6 relative z-[51]"
         >
           <h1 className="text-4xl md:text-5xl font-bold">
-            Nonnzy{" "}
+            Hallo la terre ! je suis{" "}
             <span>
               <GradientText
-                text="Transformmium"
+                text="Diane Chaka Junior"
                 gradient={["#fff", "#ccc", "#fff"]}
                 duration={77}
                 fontSize="2.5rem"
