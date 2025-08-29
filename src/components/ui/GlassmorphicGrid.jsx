@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
 
 const GlassmorphicGrid = ({ items }) => {
   const containerRef = useRef(null);
@@ -37,24 +36,33 @@ const GlassmorphicGrid = ({ items }) => {
           <div
             key={index}
             style={isLast ? lastItemStyle : { flexGrow: 1 }}
-            className="min-w-[270px] flex-1 relative flex flex-col rounded-2xl overflow-hidden shadow-lg
-              transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl
+            className="min-w-[270px] flex-1 flex flex-col rounded-2xl overflow-hidden shadow-lg
+              transform transition-transform duration-500 hover:scale-110
               steel-border bg-white/5 backdrop-blur-md p-4"
           >
-            {/* IMAGE */}
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="w-full h-48 object-cover rounded-xl mb-4"
-            />
+            {/* IMAGE avec ratio 4:3 optimisé */}
+            <div className="relative w-full pb-[75%] mb-4 rounded-xl border-[1px] border-white/40 overflow-hidden">
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+              />
+              <div className="absolute inset-0 pointer-events-none rounded-xl border-[1px] border-white/20"></div>
+            </div>
 
-            {/* TEXTES */}
-            <div className="flex flex-col flex-grow items-center text-center">
-              <h2 className="text-2xl font-bold mb-2">{item.title}</h2>
-              <h3 className="text-lg font-semibold text-gray-300 mb-2">{item.subtitle}</h3>
-              <p className="text-sm italic text-gray-400 mb-2">{item.signature}</p>
+            {/* TEXTE + ICONE proche du texte */}
+            <div className="flex flex-col items-center text-center space-y-3">
+              <div>
+                <h2 className="text-2xl font-bold mb-1">{item.title}</h2>
+                <h3 className="text-lg font-semibold text-gray-300 mb-1">{item.subtitle}</h3>
+                <p className="text-sm italic text-gray-400 mb-2">{item.signature}</p>
+              </div>
 
-              {item.icon && <div className="mt-auto flex justify-center">{item.icon}</div>}
+              {item.icon && (
+                <div className="flex justify-center">
+                  {item.icon}
+                </div>
+              )}
             </div>
           </div>
         );
