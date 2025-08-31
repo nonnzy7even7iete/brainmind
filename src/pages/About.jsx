@@ -1,6 +1,7 @@
 import Spotlight from "../components/ui/Spotlight";
 import { ReactTyped } from "react-typed";
 import { Brain } from "lucide-react";
+import CardsFlip from "../components/ui/CardsFlip";
 
 export default function About() {
   return (
@@ -66,6 +67,11 @@ export default function About() {
                          bg-clip-text text-transparent animate-gradient-slow"
             />
           </div>
+        </div>
+
+        {/* Section des cartes Qur'an */}
+        <div className="mt-20">
+          <CardsFlip skew />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
+import VanillaTilt from "vanilla-tilt";
 
 const GlassmorphicGrid = ({ items }) => {
   const containerRef = useRef(null);
@@ -25,6 +26,22 @@ const GlassmorphicGrid = ({ items }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, [items]);
 
+  // ✅ Initialiser VanillaTilt
+  useEffect(() => {
+    if (containerRef.current) {
+      const cards = containerRef.current.querySelectorAll(".tilt-card");
+
+      VanillaTilt.init(cards, {
+        max: 35,          // angle max (plus grand = plus fort)
+        speed: 800,       // vitesse de retour
+        scale: 1.15,      // zoom lors du hover/touch
+        glare: true,      // ajoute un reflet dynamique
+        "max-glare": 0.6, // intensité du reflet
+        gyroscope: true,  // gère le tilt aussi avec le gyroscope mobile
+      });
+    }
+  }, [items]);
+
   return (
     <div
       ref={containerRef}
@@ -36,8 +53,7 @@ const GlassmorphicGrid = ({ items }) => {
           <div
             key={index}
             style={isLast ? lastItemStyle : { flexGrow: 1 }}
-            className="min-w-[270px] flex-1 flex flex-col rounded-2xl overflow-hidden shadow-lg
-              transform transition-transform duration-500 hover:scale-110
+            className="tilt-card min-w-[270px] flex-1 flex flex-col rounded-2xl overflow-hidden shadow-2xl
               steel-border bg-white/5 backdrop-blur-md p-4"
           >
             {/* IMAGE avec ratio 4:3 optimisé */}
@@ -50,7 +66,7 @@ const GlassmorphicGrid = ({ items }) => {
               <div className="absolute inset-0 pointer-events-none rounded-xl border-[1px] border-white/20"></div>
             </div>
 
-            {/* TEXTE + ICONE proche du texte */}
+            {/* TEXTE + ICONE */}
             <div className="flex flex-col items-center text-center space-y-3">
               <div>
                 <h2 className="text-2xl font-bold mb-1">{item.title}</h2>
