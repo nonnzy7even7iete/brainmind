@@ -33,7 +33,7 @@ const GlassmorphicGrid = ({ items }) => {
 
       VanillaTilt.init(cards, {
         max: 35,          // angle max (plus grand = plus fort)
-        speed: 800,       // vitesse de retour
+        speed: 100,       // vitesse de retour
         scale: 1.15,      // zoom lors du hover/touch
         glare: true,      // ajoute un reflet dynamique
         "max-glare": 0.6, // intensité du reflet

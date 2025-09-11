@@ -78,8 +78,24 @@ export default {
       },
       animation: {
         scroll: "scroll var(--animation-duration, 40s) linear infinite",
-        // 👇 Animation dispo directement en classe Tailwind
         "gradient-slow": "gradient 7s ease infinite",
+      },
+
+      // 🔥 AJOUT : propriétés 3D personnalisées
+      perspective: {
+        800: "800px",
+        1200: "1200px",
+        2000: "2000px",
+      },
+      translate: {
+        "z-8": "2rem",
+        "z-12": "3rem",
+        "z-20": "5rem",
+      },
+      rotate: {
+        "x-12": "12deg",
+        "y-12": "12deg",
+        "y-20": "20deg",
       },
     },
   },

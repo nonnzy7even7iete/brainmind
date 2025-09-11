@@ -54,7 +54,7 @@ export default function HomePage() {
             {" "}
             <span>
               <GradientText
-                text="Allô ! la terre ! ici , Diané Shaka Junior"
+                text="Hello ! World ! I m ,  Shaka Junior Diané"
                 gradient={["#fff", "#ccc", "#fff"]}
                 duration={77}
                 fontSize="2.5rem"
@@ -62,8 +62,8 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="text-gray-400 max-w-md">
-            L’esprit humain cherche le sens de l’engagement, le code crée la
-            direction. Ce que vous croyez voir n’est qu’un voile. Embarquez vers
+            L’esprit humain tant le plus souvent a cherche le sens dans l’engagement, le code quand a lui investigue quant a la création de la
+            direction a la chaine de valeur. Ce que vous croyez voir n’est qu’un voile. Embarquez vers
             le futur… voir par-delà !
           </p>
 
@@ -136,7 +136,7 @@ export default function HomePage() {
             className="mt-4 text-center text-white"
           >
             <GradientText
-              text="Software Engineer"
+              text="Software Engineering"
               gradient={["#fff", "#ccc", "#fff"]}
               duration={77}
               fontSize="1.5rem"

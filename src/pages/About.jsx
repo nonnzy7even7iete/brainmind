@@ -1,12 +1,20 @@
 import Spotlight from "../components/ui/Spotlight";
 import { ReactTyped } from "react-typed";
 import { Brain } from "lucide-react";
-import CardsFlip from "../components/ui/CardsFlip";
+import FocusCards from "../components/ui/FocusCards";
+
+// ✅ Import des images locales depuis src/assets
+import neverstop from "../assets/neverstop.png";
+import nver from "../assets/nver.png";
 
 export default function About() {
+  const cards = [
+    { title: "Never Stop", src: neverstop },
+    { title: "NVR", src: nver },
+  ];
+
   return (
     <div className="relative min-h-screen bg-black overflow-hidden font-['IBM Plex Mono']">
-
       {/* Grille de fond */}
       <div
         className="absolute inset-0 opacity-20 z-0"
@@ -32,7 +40,7 @@ export default function About() {
             bg-clip-text text-transparent animate-gradient-slow">
           Transformium <br />
           <span className="text-4xl md:text-5xl font-extrabold">
-            محمد
+            Nonnzy
           </span>
         </h1>
 
@@ -69,9 +77,9 @@ export default function About() {
           </div>
         </div>
 
-        {/* Section des cartes Qur'an */}
+        {/* Section 3D Boxes */}
         <div className="mt-20">
-          <CardsFlip skew />
+          <FocusCards cards={cards} />
         </div>
       </div>
     </div>
