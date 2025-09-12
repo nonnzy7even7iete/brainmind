@@ -50,7 +50,7 @@ export default function BrainMind() {
   ];
 
   const focusCardsData = [
-    { id: 1, title: "Concentration", src: nonnzyImg },
+    { id: 1, title: "Le sens de l action entre la peur de l echec et le possible epistemique !", src: nonnzyImg },
     { id: 2, title: "Motivation", src: motivationImg },
     { id: 3, title: "Discipline", src: disciplineImg },
   ];
