@@ -10,20 +10,21 @@ const GlassCard = ({
 }) => {
   return (
     <div
-      className={`relative rounded-2xl backdrop-blur-2xl bg-black/30 border border-gray-400 flex flex-col justify-center items-center p-6 text-center overflow-hidden transition-all duration-300`}
+      className={`relative rounded-2xl bg-black/20 flex flex-col justify-center items-center p-6 text-center overflow-hidden transition-all duration-300 border-t border-b border-white/10`}
       style={{
         width: single ? "90vw" : `${width}px`,
         height: `${height}px`,
         maxWidth: single ? "90vw" : `${width}px`,
-        borderWidth: "1px",
+        borderLeftWidth: 0, // pas de border à gauche
+        borderRightWidth: 0, // pas de border à droite
       }}
     >
-      {/* Shine métallique subtil */}
+      {/* Shine subtil */}
       <div className="absolute inset-0 rounded-2xl pointer-events-none">
         <div
-          className="w-full h-full rounded-2xl opacity-30"
+          className="w-full h-full rounded-2xl opacity-20"
           style={{
-            background: "linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0) 60%)",
+            background: "linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 60%)",
             mixBlendMode: "overlay",
           }}
         ></div>
@@ -31,7 +32,6 @@ const GlassCard = ({
 
       {/* Contenu */}
       <div className="relative flex flex-col justify-center items-center text-center z-10">
-        {/* Titre avec check icon */}
         <div className="flex items-center gap-2">
           <h2 className="text-gray-300 font-light text-3xl tracking-wide font-oswald">
             {title}

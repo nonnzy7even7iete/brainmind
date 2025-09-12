@@ -40,7 +40,7 @@ const Blog = () => {
       title: "Logique serveur",
       subtitle:
         "L’exécution de ce schéma d’action, là où chaque requête trouve sa réponse avant même qu’elle ne soit formulée.",
-      signature: "Freedom to fail",
+      signature: "Scriptingonfreedomtofail",
       icon: <SiNodedotjs size={32} />, // <-- Node.js
     },
   ];
