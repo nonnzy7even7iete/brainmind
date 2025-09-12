@@ -62,7 +62,7 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="text-gray-400 max-w-md">
-            L’esprit humain tant le plus souvent a cherche le sens dans l’engagement, le code quand a lui investigue quant a la création de la
+            L’esprit humain tant le plus souvent a chercher le sens dans l’engagement, le code quand a lui investigue quant a la création de la
             direction a la chaine de valeur. Ce que vous croyez voir n’est qu’un voile. Embarquez vers
             le futur… voir par-delà !
           </p>
