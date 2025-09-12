@@ -3,6 +3,12 @@
 import React from "react";
 import InfiniteMovingCards from "@/components/ui/infinite-moving-cards";
 import GradientText from "@/components/ui/GradientText";
+import FocusCards from "@/components/ui/FocusCards";
+
+// Import des images depuis src/assets
+import nonnzyImg from "@/assets/nonnzy.png";
+import motivationImg from "@/assets/neverstop.png";
+import disciplineImg from "@/assets/NN.png";
 
 export default function BrainMind() {
   const stoicQuotes = [
@@ -43,6 +49,12 @@ export default function BrainMind() {
     },
   ];
 
+  const focusCardsData = [
+    { id: 1, title: "Concentration", src: nonnzyImg },
+    { id: 2, title: "Motivation", src: motivationImg },
+    { id: 3, title: "Discipline", src: disciplineImg },
+  ];
+
   return (
     <main className="relative w-full min-h-screen flex flex-col items-center justify-start bg-black text-white overflow-x-hidden mt-[77px]">
       
@@ -72,10 +84,10 @@ export default function BrainMind() {
         </div>
       </section>
 
-      {/* Section centrale pour futur composant */}
+      {/* Section FocusCards */}
       <section className="w-full py-16 flex flex-col items-center text-center">
-        <div className="bg-gray-800 text-white rounded-xl p-6 text-center max-w-2xl w-full shadow-lg">
-          Ici pourra être ton prochain composant, centré et responsive.
+        <div className="w-full max-w-5xl px-4">
+          <FocusCards cards={focusCardsData} />
         </div>
       </section>
 
