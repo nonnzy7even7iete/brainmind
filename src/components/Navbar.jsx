@@ -70,7 +70,7 @@ export default function Navbar() {
               <ImBlog size={18} /> Blog
             </Link>
             <Link to="/about" className={linkStyle}>
-              <AiOutlineInfoCircle size={18} /> À propos
+              <AiOutlineInfoCircle size={18} /> Nonnzytr
             </Link>
             <Link to="/brindmind" className={linkStyle}>
               <LuBrain size={18} /> Brind Mind

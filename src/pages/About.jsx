@@ -3,7 +3,7 @@ import { BinaryRain } from "@/components/ui/BinaryRain";
 import GlassCard from "@/components/ui/GlassCard";
 import GradientText from "@/components/ui/GradientText";
 import DarkCard from "@/components/ui/DarkCard";
-import nverImg from "@/assets/nver.png";
+import nverImg from "@/assets/neverstop.png";
 
 export default function About() {
   return (
