@@ -70,7 +70,7 @@ const Blog = () => {
       {/* TEXTE FLIP ANIMÉ */}
       <section className="w-full px-6 sm:px-12 pb-24 flex flex-col items-center text-center">
         <ContainerTextFlip
-          words={["Mantra", "Awareness", "Vision", "Action"]}
+          words={["Vision", "Mantra", "Awareness", "Action"]}
           className="max-w-3xl"
         />
       </section>
