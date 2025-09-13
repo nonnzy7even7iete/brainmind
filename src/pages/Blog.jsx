@@ -1,8 +1,7 @@
-"use client";
-
 import React from "react";
-import GradientText from "@/components/ui/GradientText";
-import GlassmorphicGrid from "@/components/ui/GlassmorphicGrid";
+import GradientText from "../components/ui/GradientText";
+import GlassmorphicGrid from "../components/ui/GlassmorphicGrid";
+import { ContainerTextFlip } from "../components/ui/ContainerTextFlip";
 
 // Import des images
 import nonnzytr from "../assets/nonnzy.png";
@@ -14,7 +13,6 @@ import { Brain } from "lucide-react";
 import { SiNextdotjs, SiNodedotjs } from "react-icons/si";
 
 const Blog = () => {
-  // ✅ Objets pour alimenter la grille
   const items = [
     {
       src: nonnzytr,
@@ -32,7 +30,7 @@ const Blog = () => {
       subtitle:
         "Un schéma d’action exécutif orienté vers le potentiel de croissance, adapté aux besoins de votre industrie.",
       signature: "Flow Awareness",
-      icon: <SiNextdotjs size={32} />, // <-- Next.js
+      icon: <SiNextdotjs size={32} />,
     },
     {
       src: NN,
@@ -41,7 +39,7 @@ const Blog = () => {
       subtitle:
         "L’exécution de ce schéma d’action, là où chaque requête trouve sa réponse avant même qu’elle ne soit formulée.",
       signature: "Scriptingonfreedomtofail",
-      icon: <SiNodedotjs size={32} />, // <-- Node.js
+      icon: <SiNodedotjs size={32} />,
     },
   ];
 
@@ -69,11 +67,12 @@ const Blog = () => {
         <GlassmorphicGrid items={items} />
       </section>
 
-      {/* TEXTE / FUTUR COMPOSANT */}
+      {/* TEXTE FLIP ANIMÉ */}
       <section className="w-full px-6 sm:px-12 pb-24 flex flex-col items-center text-center">
-        <div className="bg-gray-800/40 text-white rounded-xl p-8 sm:p-10 max-w-2xl w-full shadow-lg backdrop-blur-md">
-          Ici pourra être ton prochain composant, centré et responsive.
-        </div>
+        <ContainerTextFlip
+          words={["Mantra", "Awareness", "Vision", "Action"]}
+          className="max-w-3xl"
+        />
       </section>
     </div>
   );

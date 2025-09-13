@@ -22,7 +22,7 @@ export default function DarkCard({
         height: size,
         color: 'white',
       }}
-      aria-label={title ? `${title} — carte` : 'carte dark'}
+      aria-label= {title ? `${title} — carte` : 'carte dark'}
       role="region"
     >
       {/* Image de fond */}

@@ -120,7 +120,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className={linkStyleMobile}
           >
-            <AiOutlineInfoCircle size={28} /> À propos
+            <AiOutlineInfoCircle size={28} /> Nonnzytr
           </Link>
           <Link
             to="/brindmind"
