@@ -6,7 +6,7 @@ import { ContainerTextFlip } from "../components/ui/ContainerTextFlip";
 // Import des images
 import nonnzytr from "../assets/nonnzy.png";
 import awarness from "../assets/FLOWAWARNESS.png";
-import NN from "../assets/NN.png";
+import NN from "../assets/neverstop.png";
 
 // Import d’icônes
 import { Brain } from "lucide-react";
