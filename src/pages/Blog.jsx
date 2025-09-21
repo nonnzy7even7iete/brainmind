@@ -2,6 +2,7 @@ import React from "react";
 import GradientText from "../components/ui/GradientText";
 import GlassmorphicGrid from "../components/ui/GlassmorphicGrid";
 import { ContainerTextFlip } from "../components/ui/ContainerTextFlip";
+import { BackgroundRippleEffect } from "../components/ui/BackgroundRippleEffect"; // ✅ Import
 
 // Import des images
 import nonnzytr from "../assets/nonnzy.png";
@@ -44,9 +45,15 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white px-6 sm:px-12 flex flex-col items-center text-center pt-24">
+    <div className="relative min-h-screen bg-black text-white px-6 sm:px-12 flex flex-col items-center text-center pt-24 overflow-hidden">
+
+      {/* Background Ripple - tout au fond */}
+      <div className="absolute inset-0 z-0">
+        <BackgroundRippleEffect />
+      </div>
+
       {/* TITRE GRADIENT */}
-      <header className="mb-12">
+      <header className="mb-12 relative z-10">
         <h1>
           <GradientText
             text="Bienvenue sur mon blog"
@@ -63,12 +70,12 @@ const Blog = () => {
       </header>
 
       {/* GRID GLASSMORPHIC */}
-      <section className="w-full mb-16">
+      <section className="w-full mb-16 relative z-10">
         <GlassmorphicGrid items={items} />
       </section>
 
       {/* TEXTE FLIP ANIMÉ */}
-      <section className="w-full px-6 sm:px-12 pb-24 flex flex-col items-center text-center">
+      <section className="w-full px-6 sm:px-12 pb-24 flex flex-col items-center text-center relative z-10">
         <ContainerTextFlip
           words={["Vision", "Mantra", "Awareness", "Action"]}
           className="max-w-3xl"
