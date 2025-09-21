@@ -12,17 +12,28 @@ import { CgMenuRightAlt, CgClose } from "react-icons/cg";
 
 import { Button } from "@/components/ui/button";
 
-export default function Navbar() {
+const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Dark mode toggle
     if (dark) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
   }, [dark]);
+
+  useEffect(() => {
+    // Detect scroll pour rendre le background plus transparent
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleTheme = () => setDark((prev) => !prev);
 
@@ -50,17 +61,15 @@ export default function Navbar() {
     <>
       {/* NAVBAR PRINCIPALE */}
       <nav
-        className="fixed top-4 left-1/2 -translate-x-1/2 w-[90vw] z-[77]
-                   bg-black/30 dark:bg-black/40 backdrop-blur-2xl
-                   border border-gray-600/40 dark:border-gray-700/40
-                   rounded-full transition-colors duration-500 shadow-lg"
+        className={`fixed top-0 left-0 w-full z-[77]
+                    ${scrolled ? "bg-black/10 dark:bg-black/20" : "bg-black/30 dark:bg-black/40"}
+                    backdrop-blur-2xl transition-colors duration-500
+                    border-b border-gray-600/20 dark:border-gray-700/30
+                    shadow-lg`}
       >
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* LOGO */}
-          <Link
-            to="/"
-            className="text-xl font-bold text-white transition-colors duration-500"
-          >
+          <Link to="/" className="text-xl font-bold text-white transition-colors duration-500">
             BrainMind
           </Link>
 
@@ -77,24 +86,14 @@ export default function Navbar() {
             </Link>
 
             {/* BOUTON DARK/LIGHT MODE (desktop) */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className={buttonStyle + " ml-6"}
-            >
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className={buttonStyle + " ml-6"}>
               {dark ? <FiSun className="text-yellow-400" /> : <FiMoon className="text-white" />}
             </Button>
           </div>
 
           {/* TOGGLE MENU MOBILE */}
           <div className="md:hidden flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setOpen(!open)}
-              className={buttonStyle + " p-4 text-3xl"}
-            >
+            <Button variant="ghost" size="icon" onClick={() => setOpen(!open)} className={buttonStyle + " p-4 text-3xl"}>
               <CgMenuRightAlt className="text-white" />
             </Button>
           </div>
@@ -108,50 +107,24 @@ export default function Navbar() {
                     bg-black/30 dark:bg-black/50 backdrop-blur-2xl`}
       >
         <div className="flex flex-col h-full justify-center items-center space-y-10 text-2xl font-semibold px-6 relative">
-          <Link
-            to="/blog"
-            onClick={() => setOpen(false)}
-            className={linkStyleMobile}
-          >
+          <Link to="/blog" onClick={() => setOpen(false)} className={linkStyleMobile}>
             <ImBlog size={28} /> Blog
           </Link>
-          <Link
-            to="/about"
-            onClick={() => setOpen(false)}
-            className={linkStyleMobile}
-          >
+          <Link to="/about" onClick={() => setOpen(false)} className={linkStyleMobile}>
             <AiOutlineInfoCircle size={28} /> Nonnzytr
           </Link>
-          <Link
-            to="/brindmind"
-            onClick={() => setOpen(false)}
-            className={linkStyleMobile}
-          >
+          <Link to="/brindmind" onClick={() => setOpen(false)} className={linkStyleMobile}>
             <LuBrain size={28} /> Brind Mind
           </Link>
 
           {/* BOUTON DARK/LIGHT MODE (mobile) */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className={buttonStyle + " mt-10"}
-          >
-            {dark ? (
-              <FiSun className="text-yellow-400" size={24} />
-            ) : (
-              <FiMoon className="text-white" size={24} />
-            )}
+          <Button variant="ghost" size="icon" onClick={toggleTheme} className={buttonStyle + " mt-10"}>
+            {dark ? <FiSun className="text-yellow-400" size={24} /> : <FiMoon className="text-white" size={24} />}
           </Button>
 
           {/* BOUTON "FERMER" MOBILE */}
           <div className="absolute bottom-10">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setOpen(false)}
-              className={buttonStyle + " p-4"}
-            >
+            <Button variant="ghost" size="icon" onClick={() => setOpen(false)} className={buttonStyle + " p-4"}>
               <CgClose className="text-white" size={22} />
             </Button>
           </div>
@@ -159,4 +132,6 @@ export default function Navbar() {
       </div>
     </>
   );
-}
+};
+
+export default Navbar;

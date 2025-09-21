@@ -37,7 +37,7 @@ export default function About() {
               image={nverImg}
               alt="Échec et renaissance"
               title="L’Ombre de l’Échec"
-              description="La peur d’échouer n’est qu’un voile : oser la traverser, c’est renaître au-delà du bien et du mal."
+              description="La peur d’échouer n’est qu’un voile : oser la traverser, c’est renaître par-delà le bien et le mal."
               imgShadow="0 16px 40px rgba(0,0,0,0.8)"
             />
             {/* Brume/fumée sur les côtés */}

@@ -1,12 +1,15 @@
 import React from "react";
-import { IoCheckmarkOutline } from "react-icons/io5";
+// Nouveaux imports d’icônes
+import { LuChartNoAxesCombined } from "react-icons/lu";
+import { TbWorldCode } from "react-icons/tb";
 
 const GlassCard = ({
   title = "Titre",
   text = "Contenu du texte",
   width = 300,
   height = 250,
-  single = false
+  single = false,
+  icon: Icon = LuChartNoAxesCombined, // ✅ Icône par défaut
 }) => {
   return (
     <div
@@ -15,8 +18,8 @@ const GlassCard = ({
         width: single ? "90vw" : `${width}px`,
         height: `${height}px`,
         maxWidth: single ? "90vw" : `${width}px`,
-        borderLeftWidth: 0, // pas de border à gauche
-        borderRightWidth: 0, // pas de border à droite
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
       }}
     >
       {/* Shine subtil */}
@@ -24,7 +27,8 @@ const GlassCard = ({
         <div
           className="w-full h-full rounded-2xl opacity-20"
           style={{
-            background: "linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 60%)",
+            background:
+              "linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0) 60%)",
             mixBlendMode: "overlay",
           }}
         ></div>
@@ -36,7 +40,8 @@ const GlassCard = ({
           <h2 className="text-gray-300 font-light text-3xl tracking-wide font-oswald">
             {title}
           </h2>
-          <IoCheckmarkOutline className="text-gray-200 w-6 h-6" />
+          {/* ✅ Icône dynamique */}
+          <Icon className="text-gray-200 w-6 h-6" />
         </div>
 
         <p className="text-gray-200 text-base mt-3">{text}</p>
